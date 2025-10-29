@@ -5,11 +5,10 @@ import { useUser } from '@clerk/nextjs';
 import { motion } from 'framer-motion';
 import {
   Shield,
-  FileCheck,
   TrendingUp,
   Lock,
   Users,
-  ChartBar,
+  BarChart3,
   ArrowRight,
   CheckCircle,
   Zap,
@@ -41,7 +40,7 @@ export default function HomePage() {
       color: 'from-purple-500 to-pink-500',
     },
     {
-      icon: <ChartBar className="w-8 h-8" />,
+      icon: <BarChart3 className="w-8 h-8" />,
       title: 'Fraud Detection',
       description:
         'Real-time fraud alerts and pattern detection to prevent identity theft and synthetic fraud.',
