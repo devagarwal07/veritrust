@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VeriTrust+ ML Tester</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>VeriTrust+ ML Tester</h1>
+        <div class="env">
+            <label>Backend URL</label>
+            <input id="backendUrl" value="http://127.0.0.1:8000" />
+            <label>JWT (optional)</label>
+            <input id="jwt" placeholder="Bearer token from Clerk" />
+            <button id="saveCfg">Use</button>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>/verify/face</h2>
+            <div class="grid">
+                <label>User ID</label>
+                <input id="face_user_id" value="clerk_user_id" />
+                <label>ID Image URL</label>
+                <input id="id_image_url" placeholder="https://res.cloudinary.com/.../id.jpg" />
+                <label>Selfie URL</label>
+                <input id="selfie_url" placeholder="https://res.cloudinary.com/.../selfie.jpg" />
+            </div>
+            <button id="btnFace">Send</button>
+            <pre id="outFace" class="out"></pre>
+        </section>
+
+        <section>
+            <h2>/verify/document</h2>
+            <div class="grid">
+                <label>User ID</label>
+                <input id="doc_user_id" value="clerk_user_id" />
+                <label>Doc URL</label>
+                <input id="doc_url" placeholder="https://res.cloudinary.com/.../doc.jpg" />
+                <label>Expected Name</label>
+                <input id="expected_name" placeholder="Dev Agarwal" />
+            </div>
+            <button id="btnDoc">Send</button>
+            <pre id="outDoc" class="out"></pre>
+        </section>
+
+        <section>
+            <h2>/score/credit</h2>
+            <div class="grid">
+                <label>User ID</label>
+                <input id="score_user_id" value="clerk_user_id" />
+                <label>KYC Valid</label>
+                <input id="kyc_valid" type="checkbox" checked />
+                <label>Income</label>
+                <input id="income" type="number" value="45000" />
+                <label>Transactions/Week</label>
+                <input id="tx_per_week" type="number" value="8" />
+                <label>Fraud Flags</label>
+                <input id="fraud_flags" type="number" value="0" />
+                <label>Trust Score</label>
+                <input id="trust_score" type="number" value="88" />
+            </div>
+            <button id="btnScore">Send</button>
+            <pre id="outScore" class="out"></pre>
+        </section>
+
+        <section>
+            <h2>/fraud/check</h2>
+            <div class="grid">
+                <label>User ID</label>
+                <input id="fraud_user_id" value="clerk_user_id" />
+                <label>ID Hash</label>
+                <input id="id_hash" placeholder="0x45f1..." />
+                <label>Face Hash</label>
+                <input id="face_hash" placeholder="0x98e2..." />
+            </div>
+            <button id="btnFraud">Send</button>
+            <pre id="outFraud" class="out"></pre>
+        </section>
+    </main>
+
+    <footer>
+        <small>VeriTrust+ — Minimal UI for ML endpoints</small>
+    </footer>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
